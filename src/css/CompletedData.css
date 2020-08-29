@@ -1,0 +1,16 @@
+div table{
+    border: 1px solid black;
+    text-align: center;
+    width:40%;
+    margin-left:30%;
+    margin-top: 4%;
+    
+}
+table th.label-firstname,th.label-lastname,th.label-firstname,th.label-email,th.label-phonenumber,th.label-streetnumber,
+th.label-streetname,th.label-streettype,th.label-suburb,th.label-postcode{
+    padding: 15px;
+}
+table th.text-firstname,th.text-lastname,th.text-firstname,th.text-email,th.text-phonenumber,th.text-streetnumber,
+th.text-streetname,th.text-streettype,th.text-suburb,th.text-postcode{
+    padding: 15px;
+} 

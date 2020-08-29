@@ -1,0 +1,20 @@
+div label.streetnumber,label.streetname,label.streettype,label.suburblabel,label.postcode{
+    padding: 1em 1em 1em 1em;
+  }
+
+div input.streetnumbertext,input.streetnametext,input.suburbtext,input.postcodetext{
+    margin: 1em 1em 1em 1em;
+    width: 30%;
+   
+}
+
+div input.prevbutton{
+margin: 1em 1em 1em 1em;
+width:10%;
+background-color: #bdc3c7;
+}
+div input.submitbutton{
+margin: 1em 1em 1em 1em;
+width:10%;
+background-color: #bdc3c7;
+}

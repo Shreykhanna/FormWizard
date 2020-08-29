@@ -1,0 +1,16 @@
+
+div label.firstname,label.lastname,label.email,label.phone{
+  padding: 1em 1em 1em 1em;
+}
+div input.firstnametext,input.lastnametext,input.emailtext,input.phonenumber{
+    margin: 1em 1em 1em 1em;
+    width: 30%;
+   
+}
+div input.nextbutton{
+    margin: 1em 1em 1em 1em;
+    width:10%;
+    background-color: #bdc3c7;
+    }
+
+
