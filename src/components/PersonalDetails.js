@@ -57,12 +57,10 @@ export default class PersonalDetails extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		const isValid = this.handleValidation();
+		this.setState({
+			counterNext:1
+		})
 		if (isValid) {
-			this.setState({
-				counterNext:1
-			})
-			console.log("Count value",this.state.count)
-			console.log(this.props.values.postcode > 7999)
 			return this.props.nextStep();
 		}
 	};

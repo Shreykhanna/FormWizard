@@ -33,7 +33,6 @@ export default class UserForm extends Component {
             this.setState({
                 [input]:event.target.value
             })
-            console.log("INPUT VALUE IN USERFORM" ,event.target.value)
     }
 
     render() {

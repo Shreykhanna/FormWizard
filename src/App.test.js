@@ -13,8 +13,8 @@ configure({adapter:new Adapter()})
 
 const wrapper_userform=shallow(<UserForm/>)
 
-describe('TESTS TO CHECK USER INTERACTION',()=>{
-  it('Should Render UserDetails Componen Test Case',()=>{
+describe('<UserDetails/>',()=>{
+  it('Should Render',()=>{
     const handleChange=jest.fn();
     const nextStep=jest.fn();
     const values={
@@ -25,47 +25,7 @@ describe('TESTS TO CHECK USER INTERACTION',()=>{
     }
     shallow(<UserDetails values={values} nextStep={nextStep} handleChange={handleChange}/>)
   })
-  it('Should Render Personal Details Component Test Case',()=>{
-    const handleChange=jest.fn();
-    const prevStep=jest.fn();
-    const nextStep=jest.fn();
-    const values={
-      streetNumber:'',
-      streetName:'',
-      streetType:'',
-      suburb:'',
-      postcode:''
-    }
-    shallow(<PersonalDetails values={values} nextStep={nextStep} prevStep={prevStep} handleChange={handleChange}/>)
-  })
-  it('Should Render Complete Data Component Test Case',()=>{
-    const values={
-      firstName:'',
-      lastName:'',
-      email:'',
-      phone:'',
-      streetNumber:'',
-      streetName:'',
-      streetType:'',
-      suburb:'',
-      postcode:''
-    }
-      shallow(<CompletedData values={values}/>)
-  })
-  it('Check FirstName Input Test Case',()=>{
-    const handleChange=jest.fn();
-    const nextStep=jest.fn();
-    const values={
-      firstName:'',
-      lastName:'',
-      email:'',
-      phone:''
-    }
-    const wrapper=shallow(<UserDetails values={values} nextStep={nextStep} handleChange={handleChange}/>)
-    wrapper.find('.firstnametext').simulate('change',{target:{value:'TEST'}});
-    console.log(wrapper_userform.state('firstName'));
-    expect(wrapper_userform.state('firstName')).toEqual('TEST');
-  })
+  
   it('Next Button Click Test Case',()=>{
     const handleChange=jest.fn();
     const nextStep=jest.fn();
@@ -80,21 +40,70 @@ describe('TESTS TO CHECK USER INTERACTION',()=>{
     }})
     expect(wrapper.state('counterNext')).toEqual(1)
   })
-  it('Previous Button Click Test Case ',()=>{
-    const handleChange=jest.fn();
-    const prevStep=jest.fn();
-    const nextStep=jest.fn();
+})
+  describe('<PersonalDetails/>',()=>{
+    it('Should Render ',()=>{
+      const handleChange=jest.fn();
+      const prevStep=jest.fn();
+      const nextStep=jest.fn();
+      const values={
+        streetNumber:'',
+        streetName:'',
+        streetType:'',
+        suburb:'',
+        postcode:''
+      }
+      shallow(<PersonalDetails values={values} nextStep={nextStep} prevStep={prevStep} handleChange={handleChange}/>)
+    })
+    it('Previous Button Should Click',()=>{
+      const handleChange=jest.fn();
+      const prevStep=jest.fn();
+      const nextStep=jest.fn();
+      const values={
+        streetNumber:'',
+        streetName:'',
+        streetType:'',
+        suburb:'',
+        postcode:''
+      }
+      const wrapper=shallow(<PersonalDetails values={values} nextStep={nextStep} prevStep={prevStep} handleChange={handleChange}/>)
+      wrapper.find('#prevbutton').simulate('click',{preventDefault: () => {
+      }})
+      expect(wrapper.state('counterPrevious')).toEqual(1)
+    })
+    it('Next Button Should Click',()=>{
+      const handleChange=jest.fn();
+      const prevStep=jest.fn();
+      const nextStep=jest.fn();
+      const values={
+        streetNumber:'',
+        streetName:'',
+        streetType:'',
+        suburb:'',
+        postcode:''
+      }
+      const wrapper=shallow(<PersonalDetails values={values} nextStep={nextStep} prevStep={prevStep} handleChange={handleChange}/>)
+      wrapper.find('#submitbutton').simulate('click',{preventDefault: () => {
+      }})
+      expect(wrapper.state('counterNext')).toEqual(1)
+    })
+
+  })
+
+describe("<CompletedData/>",()=>{
+  it('Should Render',()=>{
     const values={
+      firstName:'',
+      lastName:'',
+      email:'',
+      phone:'',
       streetNumber:'',
       streetName:'',
       streetType:'',
       suburb:'',
       postcode:''
     }
-    const wrapper=shallow(<PersonalDetails values={values} nextStep={nextStep} prevStep={prevStep} handleChange={handleChange}/>)
-    wrapper.find('#prevbutton').simulate('click',{preventDefault: () => {
-    }})
-    expect(wrapper.state('counterPrevious')).toEqual(1)
+      shallow(<CompletedData values={values}/>)
   })
-
 })
+

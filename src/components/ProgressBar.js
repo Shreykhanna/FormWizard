@@ -3,7 +3,6 @@ import React from 'react'
 const ProgressBar=(props)=>{
     
  const {bgcolor,completed}=props.data;
-  console.log("Progress bar data",props)
     const containerStyles = {
         height: 20,
         width: '80%',
